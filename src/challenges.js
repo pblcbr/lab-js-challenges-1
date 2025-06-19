@@ -134,13 +134,9 @@ function greatestProduct(matrix) {
   let maxMultplication = 0;
 for (let i=0;i<matrix.length-3;i++){
   for (let j=0;j<matrix[i].length-3;j++){
-    if (matrix[i][j]*matrix[i][j+1]*matrix[i][j+2]*matrix[i][j+3] > matrix[i][j]*matrix[i+1][j]*matrix[i+2][j]*matrix[i+3][j]) {
-      maxMultplication = matrix[i][j]*matrix[i][j+1]*matrix[i][j+2]*matrix[i][j+3]
-      }
-      else {
-        maxMultplication = matrix[i][j]*matrix[i+1][j]*matrix[i+2][j]*matrix[i+3][j]
-      }
-  }
+    maxMultplication = Math.max(maxMultplication, matrix[i][j]*matrix[i][j+1]*matrix[i][j+2]*matrix[i][j+3], matrix[i][j]*matrix[i+1][j]*matrix[i+2][j]*matrix[i+3][j])
+}
+
 }
 return maxMultplication;
 }
